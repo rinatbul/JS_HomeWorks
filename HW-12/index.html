@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container m-3">
+      <button id="alert-generator" class="btn btn-primary">Generate Alert</button>
+      <div class="alerts m-5"></div>
+    </div>
+<!-- Inline script -->
+    <script>
+        const button = document.getElementById('alert-generator');//получаем элемент с id=alert-generator
+        const alertsBox = document.querySelector('.alerts');//поиск первого элемента с классов alerts
+        let i = 1;//переменная для счетчика
+        button.addEventListener('click', () => {
+            const alert = document.createElement('div');//создает элемент <div>
+            alert.classList.add('alert', 'alert-primary');//К элементу <div> добавляет классы alert и alert-primary
+            alert.textContent = `Alert ${i}`;//Задает текст для элемента <div>
+            alertsBox.prepend(alert);//К элементу с классом alerts добавить элемент <div> с классами alert и alert-primary и текстом Alert 1..n
+            i += 1;//счетчик +1
+        });
+        console.dir(button);
+    </script>
+<!--/ Inline script -->
+  </body>
+</html>

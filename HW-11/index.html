@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Work-11 DOM</title>
+    <style>
+        *{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            background-color:rgb(50, 50, 50);
+            color: rgb(180, 180, 58);
+        }
+        p{
+            background-color: rgb(90, 33, 33);
+        }
+        div{
+            background-color: rgb(38, 93, 110);
+        }
+    </style>
+</head>
+<body>
+    <p>Boom</p>
+    !!!MyText!!!
+    <div>Bam</div>
+    <script>
+        
+        let getDiv = document.querySelector('div');//Возвращает первый элемент <div>
+        let createParagraph = document.createElement('P');//Создаем новый элемент <p>.
+        getDiv.childNodes.forEach(element => createParagraph.append(element));//перебор коллекции всех дочерних элементов тэга <div>
+        getDiv.append(createParagraph);
+        
+    </script>
+</body>
+</html>
