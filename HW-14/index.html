@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+</head>
+<body>
+    <label for="file">File progress:</label>
+    <progress id="file" max="100" value="0"></progress>
+    <style>
+        label {
+            padding-right: 10px;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+            let start = 0;//счетчик
+            let element = document.getElementById("file");// получаем элемент с ID=file
+            let intervalId = setInterval(()=>{//запуск количества повторений функции
+                if (start > 100) { //если счетчик больше 100,
+                    clearInterval(intervalId);//остановить выполнение повторений
+                } else {
+                    element.value = start;// иначе к значению элемента с id file присвоить значение счетчика.
+                }
+                start++; //счетчик +1
+                // console.log(start);
+            }, 100);
+    </script>
+</body>
+</html>
